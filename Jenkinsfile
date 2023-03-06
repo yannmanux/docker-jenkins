@@ -9,11 +9,6 @@ pipeline {
               sh ' docker build -t yannmanux/imagemanu2 .'
             }
          }
-         stage ('run a container') {
-            steps {
-                sh 'docker run -d  -p 80:8002 yannmanux/imagemanu2'
-            }
-         }
          stage ('login to dockerhub') {
             steps {
                 sh 'echo $DOCKER_CREDENTIALS_PSW | docker login -u $DOCKER_CREDENTIALS_USR --password-stdin'
