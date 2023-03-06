@@ -1,7 +1,7 @@
 pipeline {
     agent any 
      environment {
-        DOCKER_CREDENTIALS = credentials('Yannick-dockerhub')
+        DOCKER_CREDENTIALS = credentials('manudocker')
      }
      stages {
          stage ('build the image') {
@@ -11,7 +11,7 @@ pipeline {
          }
          stage ('login to dockerhub') {
             steps {
-                sh 'echo dckr_pat_zl_874si9-yA2vU_e-Yn5kV6wx8 | docker login -u yannmanux --password-stdin'
+                sh 'echo $DOCKER_CREDENTIALS_PSW | docker login -u $OCKER_CREDENTIALS_USR --password-stdin'
             }
          }
          stage ('push the image in dockerhub') {
