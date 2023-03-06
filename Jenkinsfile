@@ -6,12 +6,12 @@ pipeline {
      stages {
          stage ('build the image') {
             steps {
-              sh ' docker build -t yannmanux/imagemanu .'
+              sh ' docker build -t yannmanux/imagemanu2 .'
             }
          }
          stage ('run a container') {
             steps {
-                sh 'docker run -d  -p 80:8002 yannmanux/imagemanu'
+                sh 'docker run -d  -p 80:8002 yannmanux/imagemanu2'
             }
          }
          stage ('login to dockerhub') {
@@ -21,7 +21,7 @@ pipeline {
          }
          stage ('push the image in dockerhub') {
             steps {
-                sh ' docker push yannmanux/imagemanu'
+                sh ' docker push yannmanux/imagemanu2'
             }
          }
          
