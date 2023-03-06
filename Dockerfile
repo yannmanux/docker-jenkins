@@ -1,3 +1,3 @@
 FROM httpd 
-COPY ./ /usr/local/apache/htdocs
+COPY ./ /var/www/html
 
