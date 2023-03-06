@@ -11,7 +11,7 @@ pipeline {
          }
          stage ('login to dockerhub') {
             steps {
-                sh 'echo $DOCKER_CREDENTIALS_PSW | docker login -u $OCKER_CREDENTIALS_USR --password-stdin'
+                sh 'echo $DOCKER_CREDENTIALS_PSW | docker login -u $DOCKER_CREDENTIALS_USR --password-stdin'
             }
          }
          stage ('push the image in dockerhub') {
