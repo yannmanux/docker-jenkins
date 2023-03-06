@@ -11,7 +11,7 @@ pipeline {
          }
          stage ('run a container') {
             steps {
-                sh 'docker run -d  -p 80:8001 yannmanux/imagemanu'
+                sh 'docker run -d  -p 80:80 yannmanux/imagemanu'
             }
          }
          stage ('login to dockerhub') {
