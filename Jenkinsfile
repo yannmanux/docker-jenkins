@@ -11,7 +11,7 @@ pipeline {
          }
          stage ('login to an ubuntu server') {
             steps {
-                sshagent(['ubuntu-server']) {
+                sshagent(['ubunter-server']) {
                     sh 'ssh root@173.230.136.119'
                 }
               }
