@@ -9,7 +9,7 @@ pipeline {
               sh ' docker build -t yannmanux/imagemanu3 .'
             }
          }
-         state ('login to an ubuntu server') {
+         stage ('login to an ubuntu server') {
             steps {
                 sshagent(['ubuntu-server']) {
                     sh 'ssh root@173.230.136.119'
