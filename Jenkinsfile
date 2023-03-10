@@ -15,9 +15,8 @@ pipeline {
                     sh 'ssh root@173.230.136.119'
                 }
               }
-            }
-         }
-         stage ('run a container') {
+           }
+                  stage ('run a container') {
             steps {
                 sh ' docker run -d -p 80:8005 yannmanux/imagemanu3'
             }
