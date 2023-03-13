@@ -6,9 +6,9 @@ pipeline {
                 sh ' docker --version'
             }
         }
-        stage ('check maven version') {
+        stage ('check java version') {
             steps {
-                sh 'mvn --version'
+                sh 'java --version'
             }
         }
          stage ('build the image') {
