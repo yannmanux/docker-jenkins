@@ -6,19 +6,7 @@ pipeline {
      stages {
          stage ('build the image') {
             steps {
-              sh ' docker build -t yannmanux/imagemanu3 .'
-            }
-         }
-         stage ('login to an ubuntu server') {
-            steps {
-                sshagent(['ubunter-server']) {
-                    sh 'ssh root@173.230.136.119'
-                }
-              }
-           }
-                  stage ('run a container') {
-            steps {
-                sh ' docker run -d -p 80:8005 yannmanux/imagemanu3'
+              sh ' docker build -t yannmanux/imagemanu4 .'
             }
          }
          stage ('login to dockerhub') {
@@ -28,7 +16,7 @@ pipeline {
          }
          stage ('push the image in dockerhub') {
             steps {
-                sh ' docker push yannmanux/imagemanu3'
+                sh ' docker push yannmanux/imagemanu4'
             }
          }
          
