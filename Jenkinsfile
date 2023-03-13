@@ -1,9 +1,9 @@
 pipeline {
     agent any 
      stages {
-        stage ('check docker images') {
+        stage ('check docker version') {
             steps {
-                sh ' docker images'
+                sh ' docker --version'
             }
         }
          stage ('build the image') {
